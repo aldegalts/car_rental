@@ -2,12 +2,18 @@ package com.degaltseva.car_rental.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.util.List;
 
 
 @Entity
 @Table(name = "car_categories")
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class CarCategories {
 
     @Id

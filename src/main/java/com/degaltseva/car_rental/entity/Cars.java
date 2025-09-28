@@ -2,11 +2,17 @@ package com.degaltseva.car_rental.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.time.Year;
 
 @Entity
 @Table(name = "cars")
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Cars {
 
     @Id
