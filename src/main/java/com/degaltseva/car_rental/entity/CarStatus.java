@@ -7,23 +7,23 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "car_colors")
+@Table(name = "car_statuses")
 @Getter
 @Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
-@ToString
-public class CarColors {
+@ToString(exclude = "cars")
+public class CarStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
-    private int colorId;
+    private int carStatusId;
 
-    @NotNull
     @Column(length = 50, unique = true, nullable = false)
-    private String color;
+    @NotNull
+    private String carStatus;
 
-    @OneToMany(mappedBy = "color")
-    private List<Cars> cars;
+    @OneToMany(mappedBy = "status")
+    private List<Car> cars;
 }

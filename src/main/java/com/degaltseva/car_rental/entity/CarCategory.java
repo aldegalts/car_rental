@@ -13,8 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
-@ToString
-public class CarCategories {
+@ToString(exclude = "cars")
+public class CarCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +34,6 @@ public class CarCategories {
     private int baseCost;
 
     @OneToMany(mappedBy = "category")
-    private List<Cars> cars;
+    private List<Car> cars;
 }
 

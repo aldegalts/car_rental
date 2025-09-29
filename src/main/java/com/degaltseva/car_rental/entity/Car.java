@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.Year;
+import java.util.List;
 
 @Entity
 @Table(name = "cars")
@@ -12,8 +13,8 @@ import java.time.Year;
 @Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
-@ToString
-public class Cars {
+@ToString(exclude = "rentals")
+public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +36,7 @@ public class Cars {
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     @NotNull
-    private CarCategories category;
+    private CarCategory category;
 
     @Column(length = 20, unique = true, nullable = false)
     @NotNull
@@ -44,7 +45,7 @@ public class Cars {
     @ManyToOne
     @JoinColumn(name = "color_id", nullable = false)
     @NotNull
-    private CarColors color;
+    private CarColor color;
 
     @Column(nullable = false)
     @NotNull
@@ -53,5 +54,8 @@ public class Cars {
     @ManyToOne
     @JoinColumn(name = "car_status_id", nullable = false)
     @NotNull
-    private CarStatuses status;
+    private CarStatus status;
+
+    @OneToMany(mappedBy = "car")
+    private List<Rental> rentals;
 }

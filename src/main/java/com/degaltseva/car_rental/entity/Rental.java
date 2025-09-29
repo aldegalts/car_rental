@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "rentals")
@@ -29,7 +30,7 @@ public class Rental {
     @ManyToOne()
     @JoinColumn(name = "car_id", nullable = false)
     @NotNull
-    private Cars car;
+    private Car car;
 
     @Column(name = "start_date", nullable = false)
     @NotNull
