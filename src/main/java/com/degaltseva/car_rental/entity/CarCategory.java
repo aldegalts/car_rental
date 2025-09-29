@@ -18,6 +18,7 @@ public class CarCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id", nullable = false)
     @NotNull
     private int categoryId;
 

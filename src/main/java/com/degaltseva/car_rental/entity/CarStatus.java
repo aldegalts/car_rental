@@ -17,6 +17,7 @@ public class CarStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cars_status_id", nullable = false)
     @NotNull
     private int carStatusId;
 

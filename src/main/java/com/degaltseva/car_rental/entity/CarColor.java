@@ -17,11 +17,12 @@ public class CarColor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "color_id", nullable = false)
     @NotNull
     private int colorId;
 
-    @NotNull
     @Column(length = 50, unique = true, nullable = false)
+    @NotNull
     private String color;
 
     @OneToMany(mappedBy = "color")
