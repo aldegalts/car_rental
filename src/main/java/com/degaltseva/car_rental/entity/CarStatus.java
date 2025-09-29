@@ -21,7 +21,7 @@ public class CarStatus {
     @NotNull
     private int carStatusId;
 
-    @Column(length = 50, unique = true, nullable = false)
+    @Column(name = "status", length = 50, unique = true, nullable = false)
     @NotNull
     private String carStatus;
 

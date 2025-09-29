@@ -22,15 +22,15 @@ public class Car {
     @NotNull
     private int carId;
 
-    @Column(length = 50, nullable = false)
+    @Column(name = "brand", length = 50, nullable = false)
     @NotNull
     private String brand;
 
-    @Column(length = 50, nullable = false)
+    @Column(name = "model", length = 50, nullable = false)
     @NotNull
     private String model;
 
-    @Column(nullable = false)
+    @Column(name = "year", nullable = false)
     @NotNull
     private Year year;
 
@@ -39,16 +39,16 @@ public class Car {
     @NotNull
     private CarCategory category;
 
-    @Column(length = 20, unique = true, nullable = false)
+    @Column(name = "license_plate", length = 20, unique = true, nullable = false)
     @NotNull
-    private String license_plate;
+    private String licensePlate;
 
     @ManyToOne
     @JoinColumn(name = "color_id", nullable = false)
     @NotNull
     private CarColor color;
 
-    @Column(nullable = false)
+    @Column(name = "daily_cost", nullable = false)
     @NotNull
     private int dailyCost;
 

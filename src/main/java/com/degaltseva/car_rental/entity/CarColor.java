@@ -21,7 +21,7 @@ public class CarColor {
     @NotNull
     private int colorId;
 
-    @Column(length = 50, unique = true, nullable = false)
+    @Column(name = "color", length = 50, unique = true, nullable = false)
     @NotNull
     private String color;
 

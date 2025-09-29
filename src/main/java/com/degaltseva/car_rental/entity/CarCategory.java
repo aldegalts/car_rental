@@ -22,15 +22,15 @@ public class CarCategory {
     @NotNull
     private int categoryId;
 
-    @Column(length = 50, unique = true, nullable = false)
+    @Column(name = "category_name", length = 50, unique = true, nullable = false)
     @NotNull
     private String categoryName;
 
-    @Column(nullable = false)
+    @Column(name = "description", nullable = false)
     @NotNull
     private String description;
 
-    @Column(nullable = false)
+    @Column(name = "base_cost", nullable = false)
     @NotNull
     private int baseCost;
 
